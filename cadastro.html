@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de login</title>
+    <title>Cadastro</title>
     <script src="js/function.js"></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -26,12 +26,17 @@
         <input type="email" class="form-control" id="email" onkeyup="validarEmail()">
         <div id="impEmail"></div>
         </div>
+        
         <div class="form-group">
         <label for="pwd">Senha:</label>
         <input type="password" class="form-control" id="pwd" onkeyup="validarSenha()">
         <div id="impSenha"></div>
+        
+        <div class="form-group">
+        <label for="pwd">Confirmar Senha:</label>
+        <input type="password" class="form-control" id="pwd" onkeyup="validarSenha()">
+        <div id="impSenha"></div>
         </div>
-        <button type="button" class="btn btn-primary">Entrar</button>
         <button type="button" class="btn btn-primary">Cadastrar</button>
        </form>
 </body>
