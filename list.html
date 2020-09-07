@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de dados</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="js/function.js"></script>
+</head>
+
+<body>
+    <h5 align='center'>Listagem de entidades:</h5> <br>
+    <div align='center'>
+        <button class="btn btn-primary" onclick="listarEntidade('cliente')"> Listar usuários </button>
+        <button class="btn btn-primary" onclick="listarEntidade('item')"> Listar itens </button>
+    </div>
+    <br>
+    <table class="table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Senha</th>
+                <th>Carteira</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="idPessoa">A01</td>
+                <td class="nomePessoa">Alimpio Brito</td>
+                <td>alimpioBr@gmail.com</td>
+                <td>csProgram£ngM@ch1ne</td>
+                <td>883,00</td>
+            </tr>
+            <tr>
+                <td class="idPessoa">A02</td>
+                <td class="nomePessoa">Heliardo Sousa</td>
+                <td>folgadinréi34@gmail.com</td>
+                <td>that-80sSt!ilishGuitar</td>
+                <td>576,00</td>
+            </tr>
+            <tr>
+                <td class="idPessoa">A03</td>
+                <td class="nomePessoa">Samuel Artur</td>
+                <td>sartur255@gmail.com</td>
+                <td>St0PGaminG0-Study!</td>
+                <td>575,30</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class='idProduto'>001</td>
+                <td class="nomeProduto">Placa-Mãe Gigabyte</td>
+                <td>629,00</td>
+                <td> Soquete AM4: Suporte para a segunda geração Ryzen / Ryzen com Radeon Vega Graphics / Athlon com
+                    processadores Radeon Vega Graphics</td>
+            </tr>
+            <tr>
+                <td class="idProduto">002</td>
+                <td class="nomeProduto">Memória RAM DDR4</td>
+                <td>376,00</td>
+                <td>Formato: UDIMM /Pinos: 288/ XMP-Ready/ Plug & Play /Velocidades: 2666MHz/ Latências CAS: 16/
+                    Voltagem: 1.2V</td>
+            </tr>
+            <tr>
+                <td class="idProduto">003</td>
+                <td class="nomeProduto">Processador Intel Core i7</td>
+                <td>2560,00</td>
+                <td>Segmento vertical: Desktop /Número do processador: i7-9700F/ Litografia: 14 nm/ Soquetes
+                    suportados:
+                    FCLGA1151</td>
+            </tr>
+            <tr>
+                <td class="idProduto">004</td>
+                <td class="nomeProduto">HD SSD Samsung EVO</td>
+                <td>1.700,00</td>
+                <td>Velocidades de leitura / gravação sequenciais ( leitura 3.500 MBs / escrita 3.300 MBs) até 53%
+                    mais
+                    rápido que o 970 EVO.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table-bordered table-striped table-hover" id="lista">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+            </tr>
+        </thead>
+    </table>
+</body>
+
+</html>
