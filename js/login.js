@@ -110,7 +110,6 @@ var validador = new Validador();
 
 //evento que dispara as validações
 submit.addEventListener('click', function(evento){
-    //pausa a submissao
     evento.preventDefault();
 
     validador.validade(form);
