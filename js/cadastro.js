@@ -43,12 +43,12 @@ class Validador{
     }
 
     //verifica se o input tem um valor minimo de caracteres
-    tamanho(input, minValue){
+    tamanho(input, minTam){
         var inputTamanho = input.value.length;
-        var errorMessage = `O campo precisa ter pelo menos ${minValue} caracteres`;
+        var errorMensagem = `O campo precisa ter pelo menos ${minTam} caracteres`;
 
-        if(inputTamanho < minValue){
-            this.imprimirMensagem(input, errorMessage);
+        if(inputTamanho < minTam){
+            this.imprimirMensagem(input, errorMensagem);
         }
     }
 
@@ -58,10 +58,10 @@ class Validador{
 
         var inputValue = input.value;
 
-        var erroMessage = "Nesse Campo não aceita numeros nem caracteres especiais"
+        var errorMensagem = "Nesse Campo não aceita numeros nem caracteres especiais"
 
         if(!re.test(inputValue)){
-            this.imprimirMensagem(input, erroMessage);
+            this.imprimirMensagem(input, errorMensagem);
         }
     }
 
@@ -83,19 +83,19 @@ class Validador{
 
         var emailUsuario = input.value;
 
-        var erroMessage = "Insira um email do formato example@email.com";
+        var errorMensagem = "Insira um email do formato example@email.com";
 
         if(!re.test(emailUsuario)){
-            this.imprimirMensagem(input, erroMessage);
+            this.imprimirMensagem(input, errorMensagem);
         }
     }
 
     igual(input, inputName){
         var inputToCompare = document.getElementById(inputName).value;
-        var erroMessage = `A confirmação de senha nao confere`
+        var errorMensagem = `A confirmação de senha nao confere`
 
         if(input.value != inputToCompare){
-            this.imprimirMensagem(input, erroMessage);
+            this.imprimirMensagem(input, errorMensagem);
         }
     }
 

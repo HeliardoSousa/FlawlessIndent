@@ -39,36 +39,36 @@ class Validador{
     }
 
     //verifica se o input tem um valor minimo de caracteres
-    tamanho(input, minValue){
+    tamanho(input, minTam){
         var inputTamanho = input.value.length;
-        var errorMessage = `O campo precisa ter pelo menos ${minValue} caracteres`;
+        var errorMensagem = `O campo precisa ter pelo menos ${minTam} caracteres`;
 
-        if(inputTamanho < minValue){
-            this.imprimirMensagem(input, errorMessage);
+        if(inputTamanho < minTam){
+            this.imprimirMensagem(input, errorMensagem);
         }
     }
 
     //Verifica se o input é obrigatorio
     obrigatorio(input){
-            var inputValue = input.value;
+        var inputValue = input.value;
 
         if(inputValue === ""){
-            var errorMessage = "Este campo é Obrigatorio";
+            var errorMensagem = "Este campo é Obrigatorio";
 
-            this.imprimirMensagem(input, errorMessage);
+            this.imprimirMensagem(input, errorMensagem);
         }
     }
 
     email(input){
         //Regex
-        var re = /\w+@[a-z]+\.[a-z]+/;
+        var regex = /\w+@[a-z]+\.[a-z]+/;
 
         var emailUsuario = input.value;
 
-        var erroMessage = "Insira um email do formato example@email.com";
+        var errorMensagem = "Insira um email do formato example@email.com";
 
-        if(!re.test(emailUsuario)){
-            this.imprimirMensagem(input, erroMessage);
+        if(!regex.test(emailUsuario)){
+            this.imprimirMensagem(input, errorMensagem);
         }
     }
 
