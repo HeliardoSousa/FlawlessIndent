@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de login</title>
-    <script src="js/function.js"></script>
-
+    <title>SHATEC - entre ou cadastre-se</title>
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -18,21 +17,30 @@
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="css/loginEstilo.css">
+
 </head>
 <body>     
-        <form action="/action_page.php">
-        <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" class="form-control" id="email" onkeyup="validarEmail()">
-        <div id="impEmail"></div>
+    <div class="main-container">
+        <h1>Tela de login - SHATEC</h1>
+        <div class="campos">
+            <form id="form">
+                <div class="full-box form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Digite seu email" validade-obrigatorio validade-email>
+                </div>
+                <div class="full-box form-group">
+                    <label for="password">Senha:</label>
+                    <input type="password" class="form-control" id="password" placeholder="Digite sua senha" validade-tamanho="8" validade-obrigatorio >
+                </div>
+                <div class="buttons">
+                    <button type="submit" id="btn-submit" class="btn btn-primary">Entrar</button>
+                    <a href="cadastro.html"><button type="button" class="btn btn-primary">Cadastre-se</button></a>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-        <label for="pwd">Senha:</label>
-        <input type="password" class="form-control" id="pwd" onkeyup="validarSenha()">
-        <div id="impSenha"></div>
-        </div>
-        <button type="button" class="btn btn-primary">Entrar</button>
-        <button type="button" class="btn btn-primary">Cadastrar</button>
-       </form>
+    </div>
+    <p class="erro-validacao template"></p>
+    <script src="js/login.js"></script>
 </body>
 </html>

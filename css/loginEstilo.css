@@ -1,0 +1,45 @@
+body{
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+    padding-top: 5vh;
+}
+
+
+.main-container{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.main-container h1{
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.6rem;
+}
+
+.erro-validacao{
+    color: #ff1a1a;
+    position: absolute;
+    top: 67px;
+    font-size: .8rem;
+}
+
+.template{
+    display: none;
+}
+
+.buttons{
+    text-align: center;
+    margin-top: 75px;
+}
+
+.btn{
+    width: 120px;
+}
+
+.full-box{
+    position: relative;
+}
