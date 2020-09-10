@@ -49,3 +49,46 @@ body{
 .logoff {
     color: black;
 }
+
+
+.card-text{
+    text-align: justify;
+}
+
+.card{
+    margin-left: auto;
+    margin-right: auto;
+}
+.card-body{
+    text-align: center; 
+}
+
+.imgProduct{
+    width: 286px;
+    height: 180px;
+    object-fit: scale-down;
+}
+
+#userData{
+    font-family: 'Courier New', Courier, monospace;
+    list-style: outside;
+    text-align: left;
+    display: none;
+    position: absolute;
+    right: 0px;
+    color: white;
+    background: rgb(0, 0, 0);
+    padding-right: 5px;
+    padding-left: 7px;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+#edit{
+    width: 50px;
+    height: 30px;
+    padding-right: 50px;
+    padding-left: 8px;
+    font-size: small;
+    text-align: left;
+}
