@@ -12,9 +12,10 @@ class Validador{
     // iniciar validação de todos os campos
     validade(form){
 
-        //resgata todas as validações ativas para poderem ser apagadas
+        //resgata todas as validações ativas para ser limpa da tela
         var validacoesAtuais = document.querySelectorAll("form .erro-validacao");
         if(validacoesAtuais.length > 0){
+            //chamando funcao para limpar
             this.limparValidacoes(validacoesAtuais);
         }
 
@@ -31,10 +32,8 @@ class Validador{
                 if(input.getAttribute(this.validacoes[i]) != null){
                     //limpando a string para virar um nome de um metodo
                     var metodo = this.validacoes[i].replace("validade-", "");
-
                     //valor do input
                     var value = input.getAttribute(this.validacoes[i]);
-
                     //invocar o metodo
                     this[metodo](input,value);
                 }
@@ -45,9 +44,11 @@ class Validador{
     //verifica se o input tem um valor minimo de caracteres
     tamanho(input, minTam){
         var inputTamanho = input.value.length;
+        //mensagem a ser imprimida
         var errorMensagem = `O campo precisa ter pelo menos ${minTam} caracteres`;
 
         if(inputTamanho < minTam){
+            //chama a função para imprimir a mensagem
             this.imprimirMensagem(input, errorMensagem);
         }
     }
@@ -57,10 +58,11 @@ class Validador{
         var re = /^[A-Za-z]+$/;
 
         var inputValue = input.value;
-
+        //mensagem a ser imprimida
         var errorMensagem = "Nesse Campo não aceita numeros nem caracteres especiais"
 
         if(!re.test(inputValue)){
+            //chama a função para imprimir a mensagem
             this.imprimirMensagem(input, errorMensagem);
         }
     }
@@ -71,30 +73,34 @@ class Validador{
         var inputValue = input.value;
 
         if(inputValue === ""){
+            //mensagem a ser imprimida
             var errorMessage = "Este campo é Obrigatorio";
-
+            //chama a função para imprimir a mensagem
             this.imprimirMensagem(input, errorMessage);
         }
     }
 
     email(input){
-        //Regex
+        //Regex para verificar se o email é valido
         var re = /\w+@[a-z]+\.[a-z]+/;
 
         var emailUsuario = input.value;
-
+        //mensagem a ser imprimida
         var errorMensagem = "Insira um email do formato example@email.com";
 
         if(!re.test(emailUsuario)){
+            //chama a função para imprimir a mensagem
             this.imprimirMensagem(input, errorMensagem);
         }
     }
 
     igual(input, inputName){
-        var inputToCompare = document.getElementById(inputName).value;
+        var inputCompare = document.getElementById(inputName).value;
+        //mensagem a ser imprimida
         var errorMensagem = `A confirmação de senha nao confere`
 
-        if(input.value != inputToCompare){
+        if(input.value != inputCompare){
+            //chama a função para imprimir a mensagem
             this.imprimirMensagem(input, errorMensagem);
         }
     }
