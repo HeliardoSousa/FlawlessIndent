@@ -10,37 +10,43 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">    
 
     <link rel="stylesheet" href="css/indexStyle.css">
+    <script type="text/javascript" src="js/function.js"></script>
 </head>
 
 <body>
 
-    <header class="cabecalho bg-light">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">SHATEC</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-              <ul class="intens navbar-nav mr-auto">
+  <header class="cabecalho bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">SHATEC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <ul class="intens navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Sobre</a>
+                    <a class="nav-link" href="#">Sobre</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contatos</a>
                 </li>
-              </ul>
-              <form class="title form-inline my-2 my-lg-0">
+            </ul>
+            <form class="title form-inline my-2 my-lg-0" onmouseover="mostrarDados(1)">
                 <a class="logoff nav-link" href="login.html">Logoff</a>
                 <img id="imguser" src="img/almada.jpg" class="rounded-circle">
-              </form>
-
-            </div>
-          </nav>
-          
-    </header>
+            </form>
+        </div>
+    </nav>
+</header>
+<ul id="userData" onmouseover="mostrarDados(1)" onmouseout="mostrarDados()">
+    <li>Almada</li>
+    <li>devWeb@gmail.com</li>
+    <li>Crateús-CE</li>
+    <button class="btn btn-primary" id="edit">Editar</button>
+</ul>
 
     <br>
     <br>
