@@ -4,105 +4,123 @@
     <br>
     <br>
     <br>
-     <table id="produtos">
-        <tr>
-            <td>
-                <div id="1" class="card">
-                    <img class="card-img-top" src="../assets/placa-mae-gigabyte-ga-a320m-h-amd-am4-matx-ddr4-rev-1-1.jpg" alt="Card image cap">
+    <div >
+        <div class="bd-example mx-auto">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img id="img-carousel" src="../assets/placa-de-video-gigabyte-amd-radeon-rx-5500-xt.jpg" class="d-block w-40 mx-auto">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img id="img-carousel" src="../assets/hyperx.jpg" class="d-block w-40 mx-auto">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img id="img-carousel" src="../assets/placa-mae-gigabyte-ga-a320m-h-amd-am4-matx-ddr4-rev-1-1.png" class="d-block w-40 mx-auto">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    </div>
+                </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+     
+    <div class="row">
+
+        <div class="col-sm-3"  v-for="produto in produtos" :key="produto.id">
+
+            <div class="card">
+                <img class="card-img-top" src="../assets/placa-mae-gigabyte-ga-a320m-h-amd-am4-matx-ddr4-rev-1-1.png" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Placa-Mãe Gigabyte</h5>
-                        <p class="card-text">Soquete AM4: Suporte...</p>
+                        <h5 class="card-title">{{produto.titulo}}</h5>
+                        <p class="card-text">{{produto.descricao}}</p>
                         <a href="produto.html" class="btn btn-primary">COMPRAR</a>
                     </div>
-                </div>
-            </td>
-            <td>
-                <div id="2" class="card">
-                    <img class="card-img-top" src="../assets/hyperx.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Memória RAM DDR4</h5>
-                        <p class="card-text">Formato: UDIMM /Pinos...</p>
-                        <a href="#" class="btn btn-primary">COMPRAR</a>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div id="3" class="card">
-                    <img class="card-img-top" src="../assets/processador-intel-core-i7-10gen.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Intel Core i7</h5>
-                        <p class="card-text">Segmento vertical: Desktop...</p>
-                        <a href="#" class="btn btn-primary">COMPRAR</a>
-                    </div>
-                  </div>
-            </td>
-            <td>
-                <div id="4" class="card">
-                    <img class="card-img-top" src="../assets/HD SSD Samsung EVO.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">>HD SSD Samsung EVO</h5>
-                        <p class="card-text">Soquete AM4: Suporte...</p>
-                        <a href="#" class="btn btn-primary">COMPRAR</a>
-                    </div>
-                  </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div id="5" class="card">
-                    <img class="card-img-top" src="../assets/processador-amd-ryzen-3-3200g.webp" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">AMD Ryzen-3-3200g</h5>
-                        <p class="card-text">Soquete AM4: Suporte...</p>
-                        <a href="#" class="btn btn-primary">COMPRAR</a>
-                    </div>
-                  </div>
-            </td>
-            <td>
-                <div id="6" class="card">
-                    <img class="card-img-top" src="../assets/placa-de-video-gigabyte-amd-radeon-rx-5500-xt.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">AMD rx 5500xt</h5>
-                        <p class="card-text">Formato: UDIMM /Pinos...</p>
-                        <a href="#" class="btn btn-primary">COMPRAR</a>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div id="7" class="card">
-                    <img class="card-img-top" src="../assets/gamemax-m908-01.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">gamemax m908-01</h5>
-                        <p class="card-text">Soquete AM4: Suporte...</p>
-                        <a href="#" class="btn btn-primary">COMPRAR</a>
-                    </div>
-                  </div>
-            </td>
-            <td>
-                <div id="8" class="card">
-                    <img class="card-img-top" src="../assets/memoria ram crucial ballistix.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Memória RAM DDR4</h5>
-                        <p class="card-text">Soquete AM4: Suporte...</p>
-                        <a href="#" class="btn btn-primary">COMPRAR</a>
-                    </div>
-                  </div>
-            </td>
-        </tr>
-    </table>
+            </div>
+
+        </div>
+    </div>
+
     <br><br>
     <div align='center'>
-        <button class="btn btn-primary" onclick="listarEntidade('item')"> Ver Mais </button>
+        <button class="btn btn-primary full-box form-group"> Ver Mais </button>
     </div>
+    <router-view/>
   </div>
 </template>
 
-<style scoped>
 
+<script>
+    export default {
+        name: "Todos",
+        data() {
+        return {
+            produtos: [],
+            baseURI: "http://localhost:8080/shartec/api/produtos"
+        };
+    },
+    created: function() {
+        this.getAll();
+    },
+    methods: {
+        getAll: function() {
+            this.$http.get(this.baseURI).then((result) => {
+                this.produtos = result.data;
+            });
+        },
+    },
+
+};
+</script>
+
+
+<style scoped>
+.row{
+    width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ #img-carousel{
+    width: 500px;
+    align-items: center;
+}
+.bd-example{
+    right: 80px;
+    width: 1500px;
+    color: black;
+}
 #produtos{
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+    border: 2px solid;
+    padding-right: 40px;
 }
 
 .card-img-top{
@@ -127,14 +145,20 @@
     margin-left: auto;
     margin-right: auto;
     width: 18rem;
+    margin: 10px 10px;
 }
 .card-body{
     text-align: center; 
+    margin-top: 30px;
 }
 
 .imgProduct{
     width: 286px;
     height: 180px;
     object-fit: scale-down;
+}
+
+.full-box{
+    position: relative;
 }
 </style>

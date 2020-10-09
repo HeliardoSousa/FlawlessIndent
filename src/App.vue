@@ -9,14 +9,8 @@
       </div>
 
       <ul class="list-unstyled components">
-        <li class="active">
-          <router-link to="/login">Login</router-link>
-        </li>
         <li>
           <router-link to="/">Home</router-link>
-        </li>
-        <li>
-          <router-link to="/about">About</router-link>
         </li>
         <li>
           <a href="#">Blog</a>
@@ -29,7 +23,7 @@
         </li>
       </ul>
       <div class="final">
-          <router-link to="/login">Login</router-link>
+          <router-link to="/about">About</router-link>
       </div>
     </nav>
     <!-- Page Content Holder -->
@@ -42,7 +36,12 @@
             <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
                                 <i class="glyphicon glyphicon-align-left"></i>
                                 <span>MENU</span>
-                            </button>
+            </button>
+          </div>
+          <div> 
+            <router-link v-if="logged" to="/users">Users | </router-link>
+            <router-link v-if="logged == false" to="/login"><span>login</span></router-link>
+            <a href="/" v-if="logged" @click="logout"><span>Logout</span></a>
           </div>
         </div>
       </nav>
@@ -58,6 +57,25 @@
 </template>
 
  <script type="text/javascript">
+  export default {
+    data() {
+      return {
+        logged: false,
+      };
+    },
+    mounted: function() {
+      if (localStorage.getItem("user")) {
+        this.logged = true;
+      }
+    },
+    methods: {
+
+      logout: function() {
+        localStorage.removeItem("user");
+        location.reload();
+      },
+    },
+  };
     $(document).ready(function() {
 
 
@@ -70,7 +88,7 @@
   </script>
 
 
-<style>
+<style >
     @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
     body{
         font-family: 'Poppins', sans-serif;
