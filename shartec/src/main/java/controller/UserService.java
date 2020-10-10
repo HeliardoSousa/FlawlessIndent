@@ -43,6 +43,9 @@ public class UserService extends HttpServlet {
                     jsonObject.put("id", user.getId());
                     jsonObject.put("login", user.getLogin());
                     jsonObject.put("password", user.getPassword());
+                    
+                    jsonObject.put("nome", user.getNome());
+                    jsonObject.put("sobrenome", user.getSobrenome());
  
                     response.setContentType("application/json");
                     response.setCharacterEncoding("UTF-8");
@@ -64,6 +67,9 @@ public class UserService extends HttpServlet {
                 jsonObject.put("id", user.getId());
                 jsonObject.put("login", user.getLogin());
                 jsonObject.put("password", user.getPassword());
+                
+                jsonObject.put("nome", user.getNome());
+                jsonObject.put("Sobrenome", user.getSobrenome());
  
                 response.setContentType("application/json");
                 response.setCharacterEncoding("UTF-8");
@@ -86,6 +92,9 @@ public class UserService extends HttpServlet {
                 jsonObject.put("id", user.getId());
                 jsonObject.put("login", user.getLogin());
                 jsonObject.put("password", user.getPassword());
+                
+                jsonObject.put("nome", user.getNome());
+                jsonObject.put("sobrenome", user.getSobrenome());
  
                 jArray.put(jsonObject);
             }
@@ -117,13 +126,17 @@ public class UserService extends HttpServlet {
         try {
             // Request
             jsonObject = new JSONObject(jb.toString());
-            user = UserDAO.addUser(jsonObject.getString("login"), jsonObject.getString("password"));
+            user = UserDAO.addUser(jsonObject.getString("login"), jsonObject.getString("password"), jsonObject.getString("nome"), jsonObject.getString("sobrenome"));
  
             // Response
             jsonObject = new JSONObject();
             jsonObject.put("id", user.getId());
             jsonObject.put("login", user.getLogin());
             jsonObject.put("password", user.getPassword());
+            
+            jsonObject.put("nome", user.getNome());
+            jsonObject.put("sobrenome", user.getSobrenome());
+            
  
         } catch (JSONException e) {
         }
@@ -161,13 +174,16 @@ public class UserService extends HttpServlet {
                     // Request
                     jsonObject = new JSONObject(jb.toString());
                     user = UserDAO.updateUser(Integer.parseInt(params[1]), jsonObject.getString("login"),
-                            jsonObject.getString("password"));
+                            jsonObject.getString("password"), jsonObject.getString("nome"), jsonObject.getString("sobrenome"));
  
                     // Response
                     jsonObject = new JSONObject();
                     jsonObject.put("id", user.getId());
                     jsonObject.put("login", user.getLogin());
                     jsonObject.put("password", user.getPassword());
+                    
+                    jsonObject.put("nome", user.getNome());
+                    jsonObject.put("sobrenome", user.getSobrenome());
  
                 } catch (JSONException e) {
                 }
