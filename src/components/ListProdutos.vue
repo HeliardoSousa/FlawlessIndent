@@ -56,11 +56,12 @@
         <div class="col-sm-3"  v-for="produto in produtos" :key="produto.id">
 
             <div class="card">
-                <img class="card-img-top" src="../assets/placa-mae-gigabyte-ga-a320m-h-amd-am4-matx-ddr4-rev-1-1.png" alt="Card image cap">
+                <img class="card-img-top" :src="'uploads/produtos/'+produto.id+'.png'" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{produto.titulo}}</h5>
                         <p class="card-text">{{produto.descricao}}</p>
-                        <a href="produto.html" class="btn btn-primary">COMPRAR</a>
+                        <button @click="$router.push({ name: 'Produto', params: { id: produto.id } })" class="btn btn-primary">COMPRAR</button>
+                        <!-- <a href="produto.html" class="btn btn-primary">COMPRAR</a> -->
                     </div>
             </div>
 

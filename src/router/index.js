@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-
+import Produto from "../views/Produto.vue";
+import UserEdit from "../views/UserEdit.vue";
 Vue.use(VueRouter)
 
 const routes = [
@@ -33,7 +34,26 @@ const routes = [
     component: function () {
       return import(/* webpackChunkName: "about" */ '../views/Register.vue')
     }
-  }
+  },
+  {
+    path: '/user',
+    name: 'User',
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/User.vue')
+    }
+  },
+  {
+    path: "/user/edit/:id",
+    name: "UserEdit",
+    component: UserEdit,
+    props: true,
+  },
+  {
+    path: "/produto/:id",
+    name: "Produto",
+    component: Produto,
+    props: true,
+  },
 ]
 
 const router = new VueRouter({

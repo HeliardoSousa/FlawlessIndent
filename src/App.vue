@@ -39,7 +39,7 @@
             </button>
           </div>
           <div> 
-            <router-link v-if="logged" to="/users">Users | </router-link>
+            <router-link v-if="logged" to="/user">{{usuario.nome}} | </router-link>
             <router-link v-if="logged == false" to="/login"><span>login</span></router-link>
             <a href="/" v-if="logged" @click="logout"><span>Logout</span></a>
           </div>
@@ -52,21 +52,37 @@
     <br>
     <br>
     <br>
+      <Rodape></Rodape>
     <router-view/>
   </div>
 </template>
 
  <script type="text/javascript">
+ import Rodape from "../src/components/Rodape.vue"
   export default {
+    components: {
+      Rodape
+    },
     data() {
       return {
         logged: false,
+         user: {},
+         usuario: {},
+         baseURI: "http://localhost:8080/shartec/api/users",
       };
     },
     mounted: function() {
       if (localStorage.getItem("user")) {
         this.logged = true;
       }
+      this.getUser();
+
+       this.$http.get(this.baseURI + "/" + this.user.id).then((result) => {
+        this.usuario = result.data;
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
     },
     methods: {
 
@@ -74,6 +90,12 @@
         localStorage.removeItem("user");
         location.reload();
       },
+
+      getUser: function() {
+      let strObj = localStorage.getItem("user");
+      let obj = JSON.parse(strObj);
+      this.user = obj;
+      }
     },
   };
     $(document).ready(function() {
@@ -89,13 +111,25 @@
 
 
 <style >
+
+    #app{
+      display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    height: 100%;
+    }
+
     @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
     body{
+      
         font-family: 'Poppins', sans-serif;
         background-image: url("../src/assets/web-site-background-7.jpg");
         background-size: cover;
     }
-    
+    .router-link{
+      color: red;
+    }
     a,
     a:hover,
     a:focus {

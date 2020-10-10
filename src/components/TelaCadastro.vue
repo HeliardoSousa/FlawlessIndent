@@ -10,11 +10,11 @@
                     </div>
                     <div class="full-box form-group">
                         <label for="name">Nome:</label>
-                        <input type="text" class="form-control" id="name" placeholder="Digite seu nome" validade-obrigatorio validade-letras>
+                        <input type="text" class="form-control" id="name" placeholder="Digite seu nome" v-model="nome" validade-obrigatorio validade-letras>
                     </div>
                     <div class="full-box form-group direita">
                         <label for="lastname">Sobrenome:</label>
-                        <input type="text" class="form-control" id="lastname" placeholder="Digite seu sobrenome" validade-obrigatorio validade-letras>
+                        <input type="text" class="form-control" id="lastname" placeholder="Digite seu sobrenome" v-model="sobrenome" validade-obrigatorio validade-letras>
                     </div>
                     <div class="full-box form-group">
                         <label for="password">Senha:</label>
@@ -42,6 +42,8 @@ export default {
     return {
       login: "",
       password: "",
+      nome: "",
+      sobrenome: "",
       baseURI: "http://localhost:8080/shartec/api/users",
     };
   },
@@ -50,6 +52,8 @@ export default {
       let obj = {
         login: this.login,
         password: this.password,
+        nome: this.nome,
+        sobrenome: this.sobrenome,
       };
 
       this.$http.post(this.baseURI, obj).then((result) => {
