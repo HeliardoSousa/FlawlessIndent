@@ -52,17 +52,12 @@
     <br>
     <br>
     <br>
-      <Rodape></Rodape>
     <router-view/>
   </div>
 </template>
 
  <script type="text/javascript">
- import Rodape from "../src/components/Rodape.vue"
   export default {
-    components: {
-      Rodape
-    },
     data() {
       return {
         logged: false,
