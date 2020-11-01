@@ -26,8 +26,8 @@ export default {
     };
   },
   created: function() {
-    this.$http
-      .get(this.baseURI + "/" + this.id)
+      this.$http
+      .get(this.baseURI + "/prod?id=" + this.id)
       .then((result) => {
         this.produto = result.data;
       })
